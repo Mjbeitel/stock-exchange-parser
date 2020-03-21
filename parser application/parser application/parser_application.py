@@ -71,6 +71,6 @@ for link in soup.find_all('td', class_ = 'wsod_aRight'):
         print( "    ",price, "     ", change,"     ",percentage,"     ", company)
        
 
-                       
+             # hello          
    
 
