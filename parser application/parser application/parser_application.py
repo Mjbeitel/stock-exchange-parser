@@ -27,6 +27,8 @@ else:
 
 soup = BeautifulSoup(page.content, 'html.parser') # parse url
 
+date  = soup.find('div', class_ = 'wsod_StockTimestamp')
+
 stock_cont = soup.find_all('td', class_ = 'wsod_aRight') # find all
 
 x = range(len(stock_cont)) # capture length
@@ -35,7 +37,11 @@ x = range(len(stock_cont)) # capture length
 
 price = soup.find_all('td', class_ = 'wsod_aRight')
 
-print(" Stock Price:     Change:      %Change:      Company name:")
+
+print(date.get_text())
+
+
+print("\n Stock Price:     Change:      %Change:      Company name:")
 print(" ---------------------------------------------------------")
 for link in soup.find_all('td', class_ = 'wsod_aRight'):
 
